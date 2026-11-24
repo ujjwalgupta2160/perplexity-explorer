@@ -25,7 +25,7 @@ export const AboutWebsiteModal: React.FC<AboutWebsiteModalProps> = ({
   onClose
 }) => {
   const [copied, setCopied] = useState<boolean>(false);
-  const liveUrl = "https://brisk-nova-2ha860k.tmp.now";
+  const liveUrl = "https://perplexity-explorer-ujjwal.vercel.app/";
   const repoUrl = "https://github.com/ujjwalgupta2160/perplexity-explorer";
 
   if (!isOpen) return null;

@@ -2,7 +2,7 @@
 
 > **An interactive Neural Language Model Lab & Linguistic Explorer created by Ujjwal Gupta™**
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-10b981?style=for-the-badge&logo=vercel)](https://brisk-nova-2ha860k.tmp.now)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-10b981?style=for-the-badge&logo=vercel)](https://perplexity-explorer-ujjwal.vercel.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/ujjwalgupta2160/perplexity-explorer)
 [![License](https://img.shields.io/badge/Trademark-Ujjwal_Gupta™-d96b43?style=for-the-badge)](https://github.com/ujjwalgupta2160/perplexity-explorer)
 
@@ -10,7 +10,7 @@
 
 ## 🌐 Live Website & Links
 
-* **Live Web App**: [https://brisk-nova-2ha860k.tmp.now](https://brisk-nova-2ha860k.tmp.now)
+* **Live Web App**: [https://perplexity-explorer-ujjwal.vercel.app/](https://perplexity-explorer-ujjwal.vercel.app/)
 * **GitHub Repository**: [https://github.com/ujjwalgupta2160/perplexity-explorer](https://github.com/ujjwalgupta2160/perplexity-explorer)
 * **Author / Trademark**: **Ujjwal Gupta™**
 
@@ -120,3 +120,4 @@ npm run dev
 
 **Perplexity Explorer™** is an original creation and trademark of **Ujjwal Gupta™**.  
 All rights reserved © 2026 Ujjwal Gupta.
+
