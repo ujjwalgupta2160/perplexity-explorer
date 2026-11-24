@@ -13,6 +13,7 @@ import { TypeNextWordPredictor } from './components/TypeNextWordPredictor';
 import { PerplexityGraph } from './components/PerplexityGraph';
 import { FormulaDocs } from './components/FormulaDocs';
 import { PhotoHeroSection } from './components/PhotoHeroSection';
+import { AboutWebsiteModal } from './components/AboutWebsiteModal';
 import { UjjwalGuptaLogo, UjjwalGuptaTrademarkBadge } from './components/UjjwalGuptaLogo';
 import {
   evaluateFullSequence,
@@ -27,7 +28,8 @@ import {
   LayoutGrid,
   Table,
   Network,
-  Calculator
+  Calculator,
+  HelpCircle
 } from 'lucide-react';
 
 type ActiveTab = 'overview' | 'word-table' | 'lookahead-tree' | 'formula-docs';
@@ -45,6 +47,7 @@ export function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('overview');
   const [selectedToken, setSelectedToken] = useState<TokenEvaluation | null>(null);
   const [isDesignModalOpen, setIsDesignModalOpen] = useState<boolean>(false);
+  const [isAboutModalOpen, setIsAboutModalOpen] = useState<boolean>(false);
   const [onnxProgress, setOnnxProgress] = useState<number>(0);
   const [onnxStatus, setOnnxStatus] = useState<string>('');
 
@@ -102,11 +105,12 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-950">
-      {/* Light Navbar with Ujjwal Gupta™ Logo */}
+      {/* Light Navbar with Ujjwal Gupta™ Logo and About Website Button */}
       <Header
         modelMode={modelMode}
         onModelModeChange={handleModelModeChange}
         onOpenDesignModal={() => setIsDesignModalOpen(true)}
+        onOpenAboutModal={() => setIsAboutModalOpen(true)}
         onnxStatus={onnxStatus}
         onnxProgress={onnxProgress}
       />
@@ -275,7 +279,7 @@ export function App() {
         </div>
       </main>
 
-      {/* Light Clean Footer with Trademark Accreditation */}
+      {/* Light Clean Footer with Trademark Accreditation & About Link */}
       <footer className="border-t border-[#e8eee9] bg-[#f8faf8] py-8 text-xs text-slate-500 mt-16 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -286,6 +290,14 @@ export function App() {
             </div>
 
             <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsAboutModalOpen(true)}
+                className="flex items-center gap-1.5 text-slate-600 hover:text-emerald-800 transition-colors font-medium"
+              >
+                <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
+                <span>About Website</span>
+              </button>
+
               <button
                 onClick={() => setIsDesignModalOpen(true)}
                 className="flex items-center gap-1.5 text-slate-600 hover:text-emerald-800 transition-colors font-medium"
@@ -298,7 +310,7 @@ export function App() {
 
           <div className="border-t border-[#e8eee9] pt-4 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-400">
             <div>
-              &copy; {new Date().getFullYear()} <strong className="text-slate-700 font-serif">Ujjwal Gupta™</strong>. All Rights Reserved. Perplexity Explorer is a trademark of Ujjwal Gupta.
+              &copy; {new Date().getFullYear()} <strong className="text-slate-700 font-serif">Ujjwal Gupta™</strong>. All Rights Reserved. Perplexity Explorer is an official trademark of Ujjwal Gupta.
             </div>
             <div className="flex items-center gap-2 font-mono">
               <span>Next-Word Probability Engine</span>
@@ -313,6 +325,12 @@ export function App() {
       <DesignRuleModal
         isOpen={isDesignModalOpen}
         onClose={() => setIsDesignModalOpen(false)}
+      />
+
+      {/* About The Website Modal */}
+      <AboutWebsiteModal
+        isOpen={isAboutModalOpen}
+        onClose={() => setIsAboutModalOpen(false)}
       />
     </div>
   );

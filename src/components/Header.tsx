@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Palette, Info, Zap } from 'lucide-react';
+import { Cpu, Palette, Info, Zap, HelpCircle } from 'lucide-react';
 import { ModelMode } from '../types';
 import { UjjwalGuptaLogo } from './UjjwalGuptaLogo';
 
@@ -7,6 +7,7 @@ interface HeaderProps {
   modelMode: ModelMode;
   onModelModeChange: (mode: ModelMode) => void;
   onOpenDesignModal: () => void;
+  onOpenAboutModal: () => void;
   onnxStatus?: string;
   onnxProgress?: number;
 }
@@ -15,6 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
   modelMode,
   onModelModeChange,
   onOpenDesignModal,
+  onOpenAboutModal,
   onnxStatus,
   onnxProgress
 }) => {
@@ -24,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Trademark Brand Logo for Ujjwal Gupta™ */}
         <UjjwalGuptaLogo />
 
-        {/* Center / Controls (Preserved exactly as requested) */}
+        {/* Center / Controls */}
         <div className="flex items-center gap-2.5 flex-wrap">
           {/* Model Switcher */}
           <div className="flex items-center bg-[#f8faf8] p-1 rounded-2xl border border-[#e2e8f0] text-xs">
@@ -56,6 +58,16 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </button>
           </div>
+
+          {/* About Website Button */}
+          <button
+            onClick={onOpenAboutModal}
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 shadow-sm transition-all"
+            title="About this website and official links"
+          >
+            <HelpCircle className="w-3.5 h-3.5 text-emerald-700" />
+            <span>About Website</span>
+          </button>
 
           {/* 50-30-20 Rule Badge */}
           <button
