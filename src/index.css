@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars for clean light UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f8faf8;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 50-30-20 Light Theme Classes */
+.bg-canvas-50 {
+  background-color: #ffffff; /* 50% Crisp White Base Canvas */
+}
+.bg-surface-30 {
+  background-color: #f8faf9; /* 30% Structural Soft Cards */
+  border-color: #e5ece6;
+}
+
+/* Token Perplexity Thermal Scale for Light Mode */
+.token-prob-emerald {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46; /* Deep forest green */
+}
+.token-prob-emerald:hover, .token-prob-emerald.active {
+  background: #d1fae5;
+  border-color: #34d399;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.18);
+}
+
+.token-prob-amber {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e; /* Deep amber */
+}
+.token-prob-amber:hover, .token-prob-amber.active {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.18);
+}
+
+.token-prob-rose {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239; /* Deep rose */
+}
+.token-prob-rose:hover, .token-prob-rose.active {
+  background: #ffe4e6;
+  border-color: #f43f5e;
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.18);
+}
+
+.token-prob-purple {
+  background: #fbf5ff;
+  border: 1px solid #e9d5ff;
+  color: #6b21a8; /* Deep purple */
+}
+.token-prob-purple:hover, .token-prob-purple.active {
+  background: #f3e8ff;
+  border-color: #c084fc;
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.18);
+}
